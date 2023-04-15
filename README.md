@@ -12,10 +12,20 @@ gRPC is a modern open source high performance Remote Procedure Call (RPC) framew
 <img src="/pictures/grpc.png" title="grpc"  width="800">
 
 ## Create Project
-<img src="/pictures/create_project.png" title="create project"  width="400">
+<img src="/pictures/create_project.png" title="create project"  width="600">
 
+- Right click on **GrpcService** and **Edit project file** :
+<img src="/pictures/edit_project_file.png" title="edit project file"  width="600">
+
+- Add the following lines :
+```
+<Protobuf Include="Protos\product.proto" GrpcServices="Server" />
+<Protobuf Include="Protos\sample.proto" GrpcServices="Server" />
+```
 
 ## Unary gRPC
+
+<img src="/pictures/unary_grpc.png" title="unary grpc"  width="800">
 
 ### Install packages in GrpcClient
 ```
