@@ -25,8 +25,8 @@ namespace GrpcService.Protos {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChNQcm90b3Mvc2FtcGxlLnByb3RvEgVncmVldCI0Cg1TYW1wbGVSZXF1ZXN0",
-            "EhEKCWZpcnN0TmFtZRgBIAEoCRIQCghsYXN0TmFtZRgCIAEoCSIiCg5TYW1w",
-            "bGVSZXNwb25zZRIQCghmdWxsTmFtZRgBIAEoCTJECgZTYW1wbGUSOgoLR2V0",
+            "EhEKCUZpcnN0TmFtZRgBIAEoCRIQCghMYXN0TmFtZRgCIAEoCSIiCg5TYW1w",
+            "bGVSZXNwb25zZRIQCghGdWxsTmFtZRgBIAEoCTJECgZTYW1wbGUSOgoLR2V0",
             "RnVsbE5hbWUSFC5ncmVldC5TYW1wbGVSZXF1ZXN0GhUuZ3JlZXQuU2FtcGxl",
             "UmVzcG9uc2VCFaoCEkdycGNTZXJ2aWNlLlByb3Rvc2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
@@ -79,7 +79,7 @@ namespace GrpcService.Protos {
       return new SampleRequest(this);
     }
 
-    /// <summary>Field number for the "firstName" field.</summary>
+    /// <summary>Field number for the "FirstName" field.</summary>
     public const int FirstNameFieldNumber = 1;
     private string firstName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -90,7 +90,7 @@ namespace GrpcService.Protos {
       }
     }
 
-    /// <summary>Field number for the "lastName" field.</summary>
+    /// <summary>Field number for the "LastName" field.</summary>
     public const int LastNameFieldNumber = 2;
     private string lastName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -286,7 +286,7 @@ namespace GrpcService.Protos {
       return new SampleResponse(this);
     }
 
-    /// <summary>Field number for the "fullName" field.</summary>
+    /// <summary>Field number for the "FullName" field.</summary>
     public const int FullNameFieldNumber = 1;
     private string fullName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -1,3 +1,5 @@
+C:\source\CsharpLibraries\gRPCTutorialgRPCBasicsProtocolBuffersHTTP2gRPCCourse\GrpcUnaryDemo\GrpcService\obj\Debug\net6.0\GrpcService.csproj.AssemblyReference.cache
+C:\source\CsharpLibraries\gRPCTutorialgRPCBasicsProtocolBuffersHTTP2gRPCCourse\GrpcUnaryDemo\GrpcService\obj\Debug\net6.0\GrpcService.GeneratedMSBuildEditorConfig.editorconfig
 C:\source\CsharpLibraries\gRPCTutorialgRPCBasicsProtocolBuffersHTTP2gRPCCourse\GrpcUnaryDemo\GrpcService\bin\Debug\net6.0\appsettings.Development.json
 C:\source\CsharpLibraries\gRPCTutorialgRPCBasicsProtocolBuffersHTTP2gRPCCourse\GrpcUnaryDemo\GrpcService\bin\Debug\net6.0\appsettings.json
 C:\source\CsharpLibraries\gRPCTutorialgRPCBasicsProtocolBuffersHTTP2gRPCCourse\GrpcUnaryDemo\GrpcService\bin\Debug\net6.0\GrpcService.exe
@@ -12,8 +14,6 @@ C:\source\CsharpLibraries\gRPCTutorialgRPCBasicsProtocolBuffersHTTP2gRPCCourse\G
 C:\source\CsharpLibraries\gRPCTutorialgRPCBasicsProtocolBuffersHTTP2gRPCCourse\GrpcUnaryDemo\GrpcService\bin\Debug\net6.0\Grpc.Net.Client.dll
 C:\source\CsharpLibraries\gRPCTutorialgRPCBasicsProtocolBuffersHTTP2gRPCCourse\GrpcUnaryDemo\GrpcService\bin\Debug\net6.0\Grpc.Net.ClientFactory.dll
 C:\source\CsharpLibraries\gRPCTutorialgRPCBasicsProtocolBuffersHTTP2gRPCCourse\GrpcUnaryDemo\GrpcService\bin\Debug\net6.0\Grpc.Net.Common.dll
-C:\source\CsharpLibraries\gRPCTutorialgRPCBasicsProtocolBuffersHTTP2gRPCCourse\GrpcUnaryDemo\GrpcService\obj\Debug\net6.0\GrpcService.csproj.AssemblyReference.cache
-C:\source\CsharpLibraries\gRPCTutorialgRPCBasicsProtocolBuffersHTTP2gRPCCourse\GrpcUnaryDemo\GrpcService\obj\Debug\net6.0\GrpcService.GeneratedMSBuildEditorConfig.editorconfig
 C:\source\CsharpLibraries\gRPCTutorialgRPCBasicsProtocolBuffersHTTP2gRPCCourse\GrpcUnaryDemo\GrpcService\obj\Debug\net6.0\GrpcService.AssemblyInfoInputs.cache
 C:\source\CsharpLibraries\gRPCTutorialgRPCBasicsProtocolBuffersHTTP2gRPCCourse\GrpcUnaryDemo\GrpcService\obj\Debug\net6.0\GrpcService.AssemblyInfo.cs
 C:\source\CsharpLibraries\gRPCTutorialgRPCBasicsProtocolBuffersHTTP2gRPCCourse\GrpcUnaryDemo\GrpcService\obj\Debug\net6.0\GrpcService.csproj.CoreCompileInputs.cache

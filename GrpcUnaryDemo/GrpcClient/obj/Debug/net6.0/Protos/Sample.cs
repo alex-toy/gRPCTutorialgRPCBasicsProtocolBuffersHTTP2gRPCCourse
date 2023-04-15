@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace GrpcService.Protos {
+namespace GrpcClient.Protos {
 
   /// <summary>Holder for reflection information generated from Protos/sample.proto</summary>
   public static partial class SampleReflection {
@@ -25,15 +25,15 @@ namespace GrpcService.Protos {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChNQcm90b3Mvc2FtcGxlLnByb3RvEgVncmVldCI0Cg1TYW1wbGVSZXF1ZXN0",
-            "EhEKCWZpcnN0TmFtZRgBIAEoCRIQCghsYXN0TmFtZRgCIAEoCSIiCg5TYW1w",
-            "bGVSZXNwb25zZRIQCghmdWxsTmFtZRgBIAEoCTJECgZTYW1wbGUSOgoLR2V0",
+            "EhEKCUZpcnN0TmFtZRgBIAEoCRIQCghMYXN0TmFtZRgCIAEoCSIiCg5TYW1w",
+            "bGVSZXNwb25zZRIQCghGdWxsTmFtZRgBIAEoCTJECgZTYW1wbGUSOgoLR2V0",
             "RnVsbE5hbWUSFC5ncmVldC5TYW1wbGVSZXF1ZXN0GhUuZ3JlZXQuU2FtcGxl",
-            "UmVzcG9uc2VCFaoCEkdycGNTZXJ2aWNlLlByb3Rvc2IGcHJvdG8z"));
+            "UmVzcG9uc2VCFKoCEUdycGNDbGllbnQuUHJvdG9zYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcService.Protos.SampleRequest), global::GrpcService.Protos.SampleRequest.Parser, new[]{ "FirstName", "LastName" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcService.Protos.SampleResponse), global::GrpcService.Protos.SampleResponse.Parser, new[]{ "FullName" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.Protos.SampleRequest), global::GrpcClient.Protos.SampleRequest.Parser, new[]{ "FirstName", "LastName" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcClient.Protos.SampleResponse), global::GrpcClient.Protos.SampleResponse.Parser, new[]{ "FullName" }, null, null, null, null)
           }));
     }
     #endregion
@@ -54,7 +54,7 @@ namespace GrpcService.Protos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::GrpcService.Protos.SampleReflection.Descriptor.MessageTypes[0]; }
+      get { return global::GrpcClient.Protos.SampleReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -85,7 +85,7 @@ namespace GrpcService.Protos {
       return new SampleRequest(this);
     }
 
-    /// <summary>Field number for the "firstName" field.</summary>
+    /// <summary>Field number for the "FirstName" field.</summary>
     public const int FirstNameFieldNumber = 1;
     private string firstName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,7 +97,7 @@ namespace GrpcService.Protos {
       }
     }
 
-    /// <summary>Field number for the "lastName" field.</summary>
+    /// <summary>Field number for the "LastName" field.</summary>
     public const int LastNameFieldNumber = 2;
     private string lastName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -280,7 +280,7 @@ namespace GrpcService.Protos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::GrpcService.Protos.SampleReflection.Descriptor.MessageTypes[1]; }
+      get { return global::GrpcClient.Protos.SampleReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -310,7 +310,7 @@ namespace GrpcService.Protos {
       return new SampleResponse(this);
     }
 
-    /// <summary>Field number for the "fullName" field.</summary>
+    /// <summary>Field number for the "FullName" field.</summary>
     public const int FullNameFieldNumber = 1;
     private string fullName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

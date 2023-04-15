@@ -9,11 +9,11 @@ service Sample {
 }
 
 message SampleRequest {
-  string firstName = 1;
-  string lastName = 2;
+  string FirstName = 1;
+  string LastName = 2;
 }
 
 message SampleResponse {
-  string fullName = 1;
+  string FullName = 1;
 }
 

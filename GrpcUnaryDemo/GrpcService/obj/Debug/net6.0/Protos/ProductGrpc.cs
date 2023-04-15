@@ -49,6 +49,10 @@ namespace GrpcService.Protos {
     static readonly grpc::Marshaller<global::GrpcService.Protos.ProductModel> __Marshaller_product_ProductModel = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcService.Protos.ProductModel.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::GrpcService.Protos.ProductSaveResponse> __Marshaller_product_ProductSaveResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcService.Protos.ProductSaveResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_google_protobuf_Empty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Protobuf.WellKnownTypes.Empty.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::GrpcService.Protos.ProductList> __Marshaller_product_ProductList = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcService.Protos.ProductList.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::GrpcService.Protos.ProductModel, global::GrpcService.Protos.ProductSaveResponse> __Method_SaveProduct = new grpc::Method<global::GrpcService.Protos.ProductModel, global::GrpcService.Protos.ProductSaveResponse>(
@@ -57,6 +61,14 @@ namespace GrpcService.Protos {
         "SaveProduct",
         __Marshaller_product_ProductModel,
         __Marshaller_product_ProductSaveResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::GrpcService.Protos.ProductList> __Method_GetProducts = new grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::GrpcService.Protos.ProductList>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetProducts",
+        __Marshaller_google_protobuf_Empty,
+        __Marshaller_product_ProductList);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -74,6 +86,12 @@ namespace GrpcService.Protos {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::GrpcService.Protos.ProductList> GetProducts(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
@@ -82,7 +100,8 @@ namespace GrpcService.Protos {
     public static grpc::ServerServiceDefinition BindService(ProductBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_SaveProduct, serviceImpl.SaveProduct).Build();
+          .AddMethod(__Method_SaveProduct, serviceImpl.SaveProduct)
+          .AddMethod(__Method_GetProducts, serviceImpl.GetProducts).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
@@ -93,6 +112,7 @@ namespace GrpcService.Protos {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, ProductBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_SaveProduct, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcService.Protos.ProductModel, global::GrpcService.Protos.ProductSaveResponse>(serviceImpl.SaveProduct));
+      serviceBinder.AddMethod(__Method_GetProducts, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Protobuf.WellKnownTypes.Empty, global::GrpcService.Protos.ProductList>(serviceImpl.GetProducts));
     }
 
   }

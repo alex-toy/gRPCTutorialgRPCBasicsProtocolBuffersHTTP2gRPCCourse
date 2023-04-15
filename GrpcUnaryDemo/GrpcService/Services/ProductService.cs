@@ -1,4 +1,5 @@
-﻿using Grpc.Core;
+﻿using Google.Protobuf.WellKnownTypes;
+using Grpc.Core;
 using GrpcService.Protos;
 
 namespace GrpcService.Services
@@ -9,12 +10,38 @@ namespace GrpcService.Services
         {
             // insert into the database
 
-            var result = Task.FromResult(new ProductSaveResponse() { 
+            Console.WriteLine($"{request.ProductName} - {request.ProductCode} - {request.ProductPrice}");
+
+            ProductSaveResponse product = new ProductSaveResponse()
+            {
                 StatusCode = 1,
                 IsSuccessfull = true
+            };
+
+            return Task.FromResult(product);
+        }
+
+        public override Task<ProductList> GetProducts(Empty request, ServerCallContext context)
+        {
+            // Get from database
+            var stockDate = DateTime.SpecifyKind(new DateTime(2022, 2, 2), DateTimeKind.Utc);
+            var products = new ProductList();
+            products.Products.Add(new ProductModel()
+            {
+                ProductName = "Product 001",
+                ProductPrice = 133,
+                ProductCode = "P01",
+                StockDate = Timestamp.FromDateTime(stockDate)
+            });
+            products.Products.Add(new ProductModel()
+            {
+                ProductName = "Product 002",
+                ProductPrice = 876,
+                ProductCode = "P02",
+                StockDate = Timestamp.FromDateTime(stockDate)
             });
 
-            return result;
+            return Task.FromResult(products);
         }
     }
 }

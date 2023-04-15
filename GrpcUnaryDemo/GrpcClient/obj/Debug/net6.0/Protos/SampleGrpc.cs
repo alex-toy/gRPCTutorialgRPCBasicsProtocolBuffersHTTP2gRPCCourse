@@ -7,7 +7,7 @@
 
 using grpc = global::Grpc.Core;
 
-namespace GrpcService.Protos {
+namespace GrpcClient.Protos {
   public static partial class Sample
   {
     static readonly string __ServiceName = "greet.Sample";
@@ -46,12 +46,12 @@ namespace GrpcService.Protos {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::GrpcService.Protos.SampleRequest> __Marshaller_greet_SampleRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcService.Protos.SampleRequest.Parser));
+    static readonly grpc::Marshaller<global::GrpcClient.Protos.SampleRequest> __Marshaller_greet_SampleRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcClient.Protos.SampleRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::GrpcService.Protos.SampleResponse> __Marshaller_greet_SampleResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcService.Protos.SampleResponse.Parser));
+    static readonly grpc::Marshaller<global::GrpcClient.Protos.SampleResponse> __Marshaller_greet_SampleResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcClient.Protos.SampleResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::GrpcService.Protos.SampleRequest, global::GrpcService.Protos.SampleResponse> __Method_GetFullName = new grpc::Method<global::GrpcService.Protos.SampleRequest, global::GrpcService.Protos.SampleResponse>(
+    static readonly grpc::Method<global::GrpcClient.Protos.SampleRequest, global::GrpcClient.Protos.SampleResponse> __Method_GetFullName = new grpc::Method<global::GrpcClient.Protos.SampleRequest, global::GrpcClient.Protos.SampleResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetFullName",
@@ -61,7 +61,7 @@ namespace GrpcService.Protos {
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::GrpcService.Protos.SampleReflection.Descriptor.Services[0]; }
+      get { return global::GrpcClient.Protos.SampleReflection.Descriptor.Services[0]; }
     }
 
     /// <summary>Client for Sample</summary>
@@ -92,22 +92,22 @@ namespace GrpcService.Protos {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::GrpcService.Protos.SampleResponse GetFullName(global::GrpcService.Protos.SampleRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::GrpcClient.Protos.SampleResponse GetFullName(global::GrpcClient.Protos.SampleRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetFullName(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::GrpcService.Protos.SampleResponse GetFullName(global::GrpcService.Protos.SampleRequest request, grpc::CallOptions options)
+      public virtual global::GrpcClient.Protos.SampleResponse GetFullName(global::GrpcClient.Protos.SampleRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_GetFullName, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::GrpcService.Protos.SampleResponse> GetFullNameAsync(global::GrpcService.Protos.SampleRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::GrpcClient.Protos.SampleResponse> GetFullNameAsync(global::GrpcClient.Protos.SampleRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetFullNameAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::GrpcService.Protos.SampleResponse> GetFullNameAsync(global::GrpcService.Protos.SampleRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::GrpcClient.Protos.SampleResponse> GetFullNameAsync(global::GrpcClient.Protos.SampleRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetFullName, null, options, request);
       }
