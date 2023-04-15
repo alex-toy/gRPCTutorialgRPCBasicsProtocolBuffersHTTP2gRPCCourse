@@ -21,16 +21,20 @@ gRPC is a modern open source high performance Remote Procedure Call (RPC) framew
 - Right click on **GrpcService** and **Edit project file** :
 <img src="/pictures/edit_project_file.png" title="edit project file"  width="400">
 
-- Add the following lines :
+- Add the following lines in **GrpcService**:
 ```
-<Protobuf Include="Protos\product.proto" GrpcServices="Server" />
-<Protobuf Include="Protos\sample.proto" GrpcServices="Server" />
+<ItemGroup>
+    <Protobuf Include="Protos\product.proto" GrpcServices="Server" />
+    <Protobuf Include="Protos\sample.proto" GrpcServices="Server" />
+</ItemGroup>
 ```
 
 - Do the same for **GrpcClient** and addd the following lines :
 ```
-<Protobuf Include="Protos\product.proto" GrpcServices="Client" />
-<Protobuf Include="Protos\sample.proto" GrpcServices="Client" />
+<ItemGroup>
+    <Protobuf Include="Protos\product.proto" GrpcServices="Client" />
+    <Protobuf Include="Protos\sample.proto" GrpcServices="Client" />
+</ItemGroup>
 ```
 
 ### Install packages in GrpcClient
