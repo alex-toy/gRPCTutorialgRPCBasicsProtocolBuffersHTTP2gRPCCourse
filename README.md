@@ -67,4 +67,29 @@ In Bidirectional streaming RPC both client and server can send multiple messages
 <img src="/pictures/grpc_bidirectional.png" title="grpc bidirectional"  width="800">
 <img src="/pictures/grpc_bidirectional_result.png" title="grpc bidirectional"  width="800">
 
+## gRPC JWT Token .Net Core
+**JSON Web Token** (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed. JWTs can be signed using a secret or a public/private key pair.
+
+gRPC can be used with ASP.NET Core authentication to associate a user with each call.
+
+The configuration of gRPC Service JWT Authentication is not different from a regular configuration that .NET Core API requires. Also, it doesn’t vary depending on the protocol which we use, HTTP or HTTPS. In a few words, you need to add standard authentication and authorization services and middleware in Program.cs file. The position of middleware is important.
+
+<img src="/pictures/grpc_bidirectional.png" title="grpc bidirectional"  width="800">
+
+### Install packages 
+- in GrpcServer
+```
+System.IdentityModel.Tokens.Jwt
+Microsoft.AspNetCore.Authentication.JwtBearer
+```
+
+- in GrpcClient
+```
+Grpc.Net.Client
+Google.Protobuf
+Grpc.Tools
+```
+
+
+
 
