@@ -46,5 +46,32 @@ namespace GrpcServer.Services
             return order;
 
         }
+
+        public override async Task BidirectionalStreamingDemo(IAsyncStreamReader<Product> productRequests, IServerStreamWriter<ProductStatus> responseStream, ServerCallContext context)
+        {
+            var tasks = new List<Task>();
+
+            while (await productRequests.MoveNext())
+            {
+                string productName = productRequests.Current.Name;
+                double productPrice = productRequests.Current.Price;
+                Console.WriteLine($"Product Name : {productName} - Product price {productPrice}");
+
+                var task = Task.Run(async () =>
+                {
+                    var randomNumber = _random.Next(1, 3);
+                    await Task.Delay(randomNumber * 1000);
+
+                    bool isAvailable = productPrice % 2 == 0;
+                    Console.WriteLine($"product {productName} is " + (isAvailable ? "available" : "not available") );
+                    var status = new ProductStatus() { Name = productName, IsAvailable = isAvailable };
+                    await responseStream.WriteAsync(status);
+                });
+                tasks.Add(task);
+            }
+
+            await Task.WhenAll(tasks);
+            Console.WriteLine("Bidirectional streaming completed");
+        }
     }
 }

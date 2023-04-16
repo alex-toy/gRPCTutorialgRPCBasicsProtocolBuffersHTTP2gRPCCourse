@@ -64,4 +64,7 @@ In a client-streaming RPC, the client will send multiple messages or a stream of
 3. **gRPC Bidirectional Streaming** [Bidirectional Streaming RPC]
 In Bidirectional streaming RPC both client and server can send multiple messages. That means both request and response will be a stream of messages. Hence Bidirectional Streaming RPC is a two streaming API [C# gRPC two way Stream / DotNet gRPC two way Streaming].
 
+<img src="/pictures/grpc_bidirectional.png" title="grpc bidirectional"  width="800">
+<img src="/pictures/grpc_bidirectional_result.png" title="grpc bidirectional"  width="800">
+
 
