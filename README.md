@@ -53,12 +53,15 @@ gRPC Streaming APIs are the APIs with which we can stream data. Streaming data m
 1. **gRPC Server Streaming** [Server Streaming RPC]
 A server-streaming RPC is like a unary RPC, except that the server returns a stream of messages in response to a client’s request. So, the client can send a single request to the server and the server will responds back with multiple multiple or a stream of messages.
 
+<img src="/pictures/grpc_server_streaming.png" title="grpc server streaming"  width="800">
+
 2. **gRPC Client Streaming** [Client Streaming RPC]
 In a client-streaming RPC, the client will send multiple messages or a stream of messages to the server. But the server will respond back with a single message.
 
+<img src="/pictures/grpc_client_streaming.png" title="grpc client streaming"  width="800">
+<img src="/pictures/grpc_client_streaming_result.png" title="grpc client streaming result"  width="600">
+
 3. **gRPC Bidirectional Streaming** [Bidirectional Streaming RPC]
 In Bidirectional streaming RPC both client and server can send multiple messages. That means both request and response will be a stream of messages. Hence Bidirectional Streaming RPC is a two streaming API [C# gRPC two way Stream / DotNet gRPC two way Streaming].
-
-<img src="/pictures/grpc_server_streaming.png" title="grpc server streaming"  width="800">
 
 

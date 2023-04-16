@@ -23,9 +23,28 @@ namespace GrpcServer.Services
                 await Task.Delay(randomNumber * 1000);
 
                 string message = $"Message {i} - {request.TestMessage}";
+                Console.WriteLine(message);
                 Test test = new Test { TestMessage = message };
                 await responseStream.WriteAsync(test);
             }
+        }
+
+        public override async Task<Order> ClientStreamingDemo(IAsyncStreamReader<Product> productRequests, ServerCallContext context)
+        {
+            double totalPrice = 0;
+            while (await productRequests.MoveNext())
+            {
+                string productName = productRequests.Current.Name;
+                double productPrice= productRequests.Current.Price;
+                totalPrice += productPrice;
+                Console.WriteLine($"Product Name : {productName} - Product price {productPrice}");
+            }
+
+            Console.WriteLine($"Client streaming completed. Total price : {totalPrice}");
+
+            var order = new Order() { TotalPrice = totalPrice };
+            return order;
+
         }
     }
 }

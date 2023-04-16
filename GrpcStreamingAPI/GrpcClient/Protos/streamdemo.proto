@@ -6,8 +6,18 @@ package streamdemo;
 
 service StreamDemo {
   rpc ServerStreamingDemo (Test) returns (stream Test);
+  rpc ClientStreamingDemo (stream Product) returns (Order);
 }
 
 message Test {
   string TestMessage = 1;
+}
+
+message Product {
+  string Name = 1;
+  double Price = 2;
+}
+
+message Order {
+  double TotalPrice = 1;
 }
