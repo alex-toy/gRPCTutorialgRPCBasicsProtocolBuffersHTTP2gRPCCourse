@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcServer1";
+
+package division;
+
+service Division {
+  rpc Divide (DivisionRequest) returns (DivisionResult);
+}
+
+message DivisionRequest {
+  int32 Number1 = 1;
+  int32 Number2 = 2;
+}
+
+message DivisionResult{
+  int32 Result = 1;
+}

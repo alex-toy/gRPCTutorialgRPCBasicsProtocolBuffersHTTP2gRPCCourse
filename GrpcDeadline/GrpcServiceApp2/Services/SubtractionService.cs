@@ -11,12 +11,13 @@ namespace GrpcServiceApp2.Services
             _logger = logger;
         }
 
-        public override Task<SubtractionResult> Subtract(SubtractionRequest request, ServerCallContext context)
+        public override async Task<SubtractionResult> Subtract(SubtractionRequest request, ServerCallContext context)
         {
             int result = request.Number1 - request.Number2;
+            await Task.Delay(5000);
             var subtractionResult = new SubtractionResult { Result = result };
 
-            return Task.FromResult(subtractionResult);
+            return subtractionResult;
         }
     }
 }

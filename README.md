@@ -98,5 +98,5 @@ Grpc.Tools
 
 A **Deadline** allows a gRPC client to specify how long it will wait for a call to complete. When a deadline is exceeded, the call will get cancelled. Setting a deadline is important because it provides an upper limit on how long a call can run for. It stops misbehaving services from running forever and exhausting server resources. Deadlines are a useful tool for building reliable apps and should be configured.
 
-<img src="/pictures/propagation.png" title="propagation"  width="800">
+<img src="/pictures/delay.png" title="delay"  width="400">
 
