@@ -5,16 +5,14 @@ using System.Text;
 
 namespace GrpcServer.Managers
 {
-    public static class JwtAuthenticationManager
+    public static partial class JwtAuthenticationManager
     {
         public const string JWT_TOKEN_KEY = "Abcd.1234-this is my custom Secret key for authentication";
         public const int JWT_TOKEN_VALIDITY = 60;
 
         public static AuthenticationResponse Authenticate(AuthenticationRequest authenticationRequest)
         {
-            bool credentialsAreCorrect = CheckCredentials(authenticationRequest);
-
-            if (!credentialsAreCorrect) return null;
+            USER_ROLE userRole = CheckCredentials(authenticationRequest);
 
             var jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
             var tokenKey = Encoding.ASCII.GetBytes(JWT_TOKEN_KEY);
@@ -25,7 +23,7 @@ namespace GrpcServer.Managers
                     new List<Claim>
                     {
                         new Claim("username", authenticationRequest.UserName),
-                        new Claim(ClaimTypes.Role, "administrator"),
+                        new Claim(ClaimTypes.Role, userRole.ToString()),
                     }),
                 Expires = tokenExpiryDateTime,
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(tokenKey), SecurityAlgorithms.HmacSha256Signature)
@@ -40,12 +38,19 @@ namespace GrpcServer.Managers
             };
         }
 
-        private static bool CheckCredentials(AuthenticationRequest authenticationRequest)
+        private static USER_ROLE CheckCredentials(AuthenticationRequest authenticationRequest)
         {
-            bool nameIsOk = authenticationRequest.UserName == "alex";
-            bool passwordIsOk = authenticationRequest.Password == "alex";
-            bool credentialsCorrect = nameIsOk && passwordIsOk;
-            return credentialsCorrect;
+            bool nameIsAdmin = authenticationRequest.UserName == "admin";
+            bool passwordIsAdmin = authenticationRequest.Password == "admin";
+            bool credentialsAdmin = nameIsAdmin && passwordIsAdmin;
+            if (credentialsAdmin) return USER_ROLE.ADMIN;
+
+            bool nameIsUser = authenticationRequest.UserName == "alex";
+            bool passwordIsUser = authenticationRequest.Password == "alex";
+            bool credentialsUser = nameIsUser && passwordIsUser;
+            if (credentialsUser) return USER_ROLE.USER;
+
+            return USER_ROLE.EXTERNAL;
         }
     }
 }

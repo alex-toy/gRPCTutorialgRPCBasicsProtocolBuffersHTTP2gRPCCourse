@@ -36,5 +36,6 @@ var app = builder.Build();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapGrpcService<AuthenticationService>();
+app.MapGrpcService<CalculationService>();
 
 app.Run();

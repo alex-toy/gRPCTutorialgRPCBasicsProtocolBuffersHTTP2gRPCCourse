@@ -74,8 +74,6 @@ gRPC can be used with ASP.NET Core authentication to associate a user with each 
 
 The configuration of gRPC Service JWT Authentication is not different from a regular configuration that .NET Core API requires. Also, it doesn’t vary depending on the protocol which we use, HTTP or HTTPS. In a few words, you need to add standard authentication and authorization services and middleware in Program.cs file. The position of middleware is important.
 
-<img src="/pictures/grpc_bidirectional.png" title="grpc bidirectional"  width="800">
-
 ### Install packages 
 - in GrpcServer
 ```
@@ -90,6 +88,10 @@ Google.Protobuf
 Grpc.Tools
 ```
 
+### Result
+
+<img src="/pictures/calculations.png" title="calculations"  width="800">
+<img src="/pictures/calculations2.png" title="calculations"  width="800">
 
 
 

@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace GrpcServer.Services
 {
-    [Authorize]
     public class CalculationService : Calculation.CalculationBase
     {
         private readonly ILogger<CalculationService> _logger;
@@ -13,6 +12,7 @@ namespace GrpcServer.Services
             _logger = logger;
         }
 
+        [Authorize(Roles = "EXTERNAL, USER, ADMIN")]
         public override Task<CalculationResult> Add(InputNumbers request, ServerCallContext context)
         {
             int result = request.Number1 + request.Number2;
@@ -21,6 +21,7 @@ namespace GrpcServer.Services
             return Task.FromResult(calculationResult);
         }
 
+        [Authorize(Roles = "USER, ADMIN")]
         public override Task<CalculationResult> Subtract(InputNumbers request, ServerCallContext context)
         {
             int result = request.Number1 - request.Number2;
@@ -29,6 +30,7 @@ namespace GrpcServer.Services
             return Task.FromResult(calculationResult);
         }
 
+        [Authorize(Roles = "USER, ADMIN")]
         public override Task<CalculationResult> Multiply(InputNumbers request, ServerCallContext context)
         {
             int result = request.Number1 * request.Number2;
@@ -37,6 +39,7 @@ namespace GrpcServer.Services
             return Task.FromResult(calculationResult);
         }
 
+        [Authorize(Roles = "ADMIN")]
         public override Task<CalculationResult> Divide(InputNumbers request, ServerCallContext context)
         {
             int result = request.Number1 / request.Number2;
