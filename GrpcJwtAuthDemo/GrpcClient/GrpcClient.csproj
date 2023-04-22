@@ -8,10 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Protos\authentication.proto" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Google.Protobuf" Version="3.22.3" />
     <PackageReference Include="Grpc.Net.Client" Version="2.52.0" />
     <PackageReference Include="Grpc.Tools" Version="2.54.0">
@@ -21,7 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="Protos\authentication.proto" GrpcServices="Server" />
+    <Protobuf Include="Protos\authentication.proto" GrpcServices="Client" />
+    <Protobuf Include="Protos\calculation.proto" GrpcServices="Client" />
   </ItemGroup>
 
 </Project>

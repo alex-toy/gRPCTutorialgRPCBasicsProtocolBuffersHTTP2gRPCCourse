@@ -12,14 +12,16 @@ namespace GrpcServer.Services
             _logger = logger;
         }
 
-        public override Task<AuthenticationResponse> Authenticate(AuthenticationRequest request, ServerCallContext context)
+        public override async Task<AuthenticationResponse> Authenticate(AuthenticationRequest request, ServerCallContext context)
         {
             var authenticationResponse = JwtAuthenticationManager.Authenticate(request);
-            return Task.FromResult(new AuthenticationResponse
+            if (authenticationResponse == null)
             {
-                AccessToken = "Hello",
-                ExpiresIn = 123
-            });
+                string message = "Invalid user credentials";
+                throw new RpcException(new Status(StatusCode.Unauthenticated, message));
+            }
+
+            return authenticationResponse;
         }
     }
 }

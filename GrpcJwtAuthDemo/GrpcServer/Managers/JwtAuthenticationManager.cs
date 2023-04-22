@@ -7,14 +7,14 @@ namespace GrpcServer.Managers
 {
     public static class JwtAuthenticationManager
     {
-        public const string JWT_TOKEN_KEY = "Abcd.1234";
+        public const string JWT_TOKEN_KEY = "Abcd.1234-this is my custom Secret key for authentication";
         public const int JWT_TOKEN_VALIDITY = 60;
 
-        public static AuthenticationResponse Authenticate(AuthenticationRequest authenticationRequest) 
+        public static AuthenticationResponse Authenticate(AuthenticationRequest authenticationRequest)
         {
-            bool nameIsAdmin = authenticationRequest.UserName == "admin";
-            bool passwordIsAdmin = authenticationRequest.Password == "admin";
-            if (!nameIsAdmin || !passwordIsAdmin) return null;
+            bool credentialsAreCorrect = CheckCredentials(authenticationRequest);
+
+            if (!credentialsAreCorrect) return null;
 
             var jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
             var tokenKey = Encoding.ASCII.GetBytes(JWT_TOKEN_KEY);
@@ -38,6 +38,14 @@ namespace GrpcServer.Managers
                 AccessToken = token,
                 ExpiresIn = (int)tokenExpiryDateTime.Subtract(DateTime.Now).TotalSeconds
             };
+        }
+
+        private static bool CheckCredentials(AuthenticationRequest authenticationRequest)
+        {
+            bool nameIsOk = authenticationRequest.UserName == "alex";
+            bool passwordIsOk = authenticationRequest.Password == "alex";
+            bool credentialsCorrect = nameIsOk && passwordIsOk;
+            return credentialsCorrect;
         }
     }
 }
