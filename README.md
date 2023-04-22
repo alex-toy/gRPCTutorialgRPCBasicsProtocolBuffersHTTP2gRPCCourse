@@ -29,7 +29,7 @@ gRPC is a modern open source high performance Remote Procedure Call (RPC) framew
 </ItemGroup>
 ```
 
-- Do the same for **GrpcClient** and addd the following lines :
+- Do the same for **GrpcClient** and add the following lines :
 ```
 <ItemGroup>
     <Protobuf Include="Protos\product.proto" GrpcServices="Client" />
